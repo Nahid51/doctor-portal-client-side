@@ -16,32 +16,32 @@ const Header = () => {
             <Box sx={{ flexGrow: 1, mb: 5 }}>
                 <AppBar position="static">
                     <Toolbar>
-                        <IconButton
-                            size="large"
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
-                            sx={{ mr: 2 }}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            Doctors Portal
-                        </Typography>
-                        <NavLink to="/appointment" style={{ textDecoration: "none" }}><Button sx={{ color: 'white' }}>Appointment</Button></NavLink>
-
-                        {user.email ?
-                            <Box>
-                                <NavLink to="/dashboard" style={{ textDecoration: "none" }}>
-                                    <Button sx={{ color: 'white' }}>Dashboard</Button>
-                                </NavLink>
-                                <Button onClick={logOut} sx={{ color: 'white' }}>logout</Button>
-                            </Box>
-                            :
-                            <NavLink to="/login" style={{ textDecoration: "none" }}>
-                                <Button sx={{ color: 'white' }}>Login</Button>
+                        <NavLink to="/" style={{ textDecoration: 'none' }}>
+                            <Typography variant="h6" sx={{ flexGrow: 1, color: 'white' }}>
+                                Doctors Portal
+                            </Typography>
+                        </NavLink>
+                        <Box sx={{ ml: 'auto', display: 'flex' }}>
+                            <NavLink to="/" style={{ textDecoration: "none" }}>
+                                <Button sx={{ color: 'white' }}>Home</Button>
                             </NavLink>
-                        }
+                            <NavLink to="/appointment" style={{ textDecoration: "none" }}>
+                                <Button sx={{ color: 'white' }}>Appointment</Button>
+                            </NavLink>
+
+                            {user.email ?
+                                <Box>
+                                    <NavLink to="/dashboard" style={{ textDecoration: "none" }}>
+                                        <Button sx={{ color: 'white' }}>Dashboard</Button>
+                                    </NavLink>
+                                    <Button onClick={logOut} sx={{ color: 'white' }}>logout</Button>
+                                </Box>
+                                :
+                                <NavLink to="/login" style={{ textDecoration: "none" }}>
+                                    <Button sx={{ color: 'white' }}>Login</Button>
+                                </NavLink>
+                            }
+                        </Box>
                     </Toolbar>
                 </AppBar>
             </Box>
